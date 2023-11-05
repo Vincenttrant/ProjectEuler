@@ -1,17 +1,10 @@
-def isPrime(num):
-    for i in range(2, int(num ** 0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
+def pythagorean():
 
-
-def sumPrimeBelow(num):
-    sum = 0
-    for i in range(2, num):
-        if isPrime(i):
-            sum += i
-
-    return sum
+    for a in range(1, 1000):
+        for b in range(a, 1000 - a):
+            c = 1000 - a - b
+            if (a ** 2) + (b ** 2) == (c ** 2):
+                return a * b * c
 
 if __name__ == "__main__":
-    print(sumPrimeBelow(2_000_000))
+    print(pythagorean())
